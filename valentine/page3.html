@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relationship Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #ffe6e6;
+            color: #d63384;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin: auto;
+        }
+        .question {
+            font-size: 20px;
+            margin: 20px 0;
+        }
+        .options button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            background-color: #ff4d6d;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+        .options button:hover {
+            background-color: #d63384;
+        }
+        .result {
+            display: none;
+            font-size: 22px;
+            margin-top: 20px;
+            color: #ff4d6d;
+        }
+        .back {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: white;
+            background: #ff4d6d;
+            padding: 10px 20px;
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+        .back:hover {
+            transform: scale(1.1);
+        }
+        #flower-shower {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.flower {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-image: url('https://www.flaticon.com/free-icon/flower_346167?term=flower&page=1&position=1&origin=search&related_id=346167'); /* Replace with a flower image URL */
+    background-size: cover;
+    opacity: 0.8;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    0% { transform: translateY(-10vh) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+}
+
+        
+    </style>
+</head>
+<body>
+    <div id="flower-shower"></div>
+
+    <div class="container">
+        <h1>Relationship Quiz Time!!! ❤️</h1>
+        <h1 id="result" class="result"></h1>
+        <div id="quiz">
+            <p class="question">1. What was my batch in Allen in class 12?</p>
+            <div class="options">
+                <button onclick="checkAnswer(this, 'correct')">TE1AAA1</button>
+                <button onclick="checkAnswer(this, 'wrong')">TE1AAB1</button>
+                <button onclick="checkAnswer(this, 'wrong')">TMAS</button>
+                <button onclick="checkAnswer(this, 'wrong')">TOPS</button>
+            </div>
+        </div>
+        <div id="quiz">
+            <p class="question">2. What is my favourite?</p>
+            <div class="options">
+                <button onclick="checkAnswer(this, 'wrong')">Egg-burji</button>
+                <button onclick="checkAnswer(this, 'wrong')">Meat</button>
+                <button onclick="checkAnswer(this, 'correct')">Chicken</button>
+                <button onclick="checkAnswer(this, 'wrong')">Paneer</button>
+            </div>
+        </div>
+        <div id="quiz">
+            <p class="question">3. Whom do I love the most?</p>
+            <div class="options">
+                <button onclick="checkAnswer(this, 'correct')">Aashi</button>
+                <button onclick="checkAnswer(this, 'correct')">Riddhima</button>
+                <button onclick="checkAnswer(this, 'correct')">Potato</button>
+                <button onclick="checkAnswer(this, 'correct')">Chuttar-pie</button>
+            </div>
+        </div>
+        <a href="index.html" class="back">← Back to Home</a>
+        <a href="page2.html" class="back">Previous Page</a>
+    </div>
+    <script>
+        function checkAnswer(button, status) {
+    let resultText = document.getElementById('result');
+    
+    if (status === 'correct') {
+        resultText.innerText = 'Yay! You got it right! 💖';
+        startFlowerShower(); // Start the flower shower
+    } else {
+        resultText.innerText = 'Oops! Try again! 💔';
+    }
+    resultText.style.display = 'block';
+}
+
+function startFlowerShower() {
+    let flowerContainer = document.getElementById('flower-shower');
+
+    for (let i = 0; i < 20; i++) { // Create 20 flowers
+        let flower = document.createElement('div');
+        flower.classList.add('flower');
+        flower.style.left = Math.random() * 100 + 'vw'; // Random horizontal position
+        flower.style.animationDuration = (Math.random() * 2 + 3) + 's'; // Random fall speed
+
+        flowerContainer.appendChild(flower);
+
+        setTimeout(() => { flower.remove(); }, 5000); // Remove after animation
+    }
+}
+    </script>
+</body>
+</html>

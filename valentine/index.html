@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Valentine's Day</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #ffe6e6;
+            color: #d63384;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            transition: background-color 1s ease-in-out;
+        }
+        .container {
+            max-width: 600px;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1.5s ease-in-out;
+            transition: transform 0.5s ease-in-out;
+        }
+        .container:hover {
+            transform: scale(1.05);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .message {
+            font-size: 22px;
+            margin: 20px 0;
+            animation: slideIn 1s ease-in-out;
+        }
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(-50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        .heart {
+            font-size: 60px;
+            animation: pulse 1.2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.3); }
+            100% { transform: scale(1); }
+        }
+        .button {
+            display: inline-block;
+            background-color: #ff4d6d;
+            color: white;
+            padding: 12px 24px;
+            margin-top: 20px;
+            text-decoration: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+        }
+        .button:hover {
+            transform: scale(1.1);
+            background-color: #d63384;
+        }
+        #hiddenMessage {
+            display: none;
+            margin-top: 20px;
+            font-size: 20px;
+            color: #ff4d6d;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        .nav {
+            margin-top: 20px;
+        }
+        .nav a {
+            margin: 10px;
+            text-decoration: none;
+            color: #ff4d6d;
+            font-size: 18px;
+            transition: color 0.3s ease-in-out;
+        }
+        .nav a:hover {
+            color: #d63384;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Happy Valentine's Day ❤️</h1>
+        <h1>Aashii Didiii</h1>
+        <p class="message">I love youuu</p>
+        <div class="heart">❤️</div>
+        <a href="#" class="button" onclick="revealMessage()">Click this!!!</a>
+        <p id="hiddenMessage">Thanks for all the love you give me. I promise I will be with you in all your hard and good times. One more thing sorry I am not able to give you enough time I really acknowledge ki tmko akela feel hota hoga idk what I am trying and will try to do everything I can to make you happy. Sorry I make u sad sometimes. I am making this hoping u will like it and it is a small apology for every hurting this I cause. Hope u will like the next pages :)</p>
+        <div class="nav">
+            <a href="page2.html">Next Page</a>
+        </div>
+    </div>
+    <script>
+        function revealMessage() {
+            document.getElementById('hiddenMessage').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
