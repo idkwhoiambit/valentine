@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Love Story Timeline</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #ffe6e6;
+            color: #d63384;
+            padding: 20px;
+        }
+        .timeline {
+            position: relative;
+            max-width: 600px;
+            margin: 50px auto;
+        }
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background: #ff4d6d;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+        }
+        .event {
+            position: relative;
+            width: 50%;
+            padding: 20px;
+            box-sizing: border-box;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+        .event:hover {
+            transform: scale(1.05);
+        }
+        .event.left {
+            left: 0;
+            text-align: right;
+        }
+        .event.right {
+            left: 50%;
+            text-align: left;
+        }
+        .event::after {
+            content: '';
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background: #ff4d6d;
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .event.left::after {
+            right: -10px;
+        }
+        .event.right::after {
+            left: -10px;
+        }
+        .details {
+            display: none;
+            margin-top: 10px;
+            font-size: 16px;
+            color: #333;
+        }
+        .back {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: white;
+            background: #ff4d6d;
+            padding: 10px 20px;
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+        .back:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <h1>How it happend?</h1>
+    <div class="timeline">
+        <div class="event left" onclick="toggleDetails('event1')">
+            <h3>The first interaction</h3>
+            <p>28/11/2023</p>
+            <div id="event1" class="details">
+                <p>The day you dm'ed me</p><p>
+                    (Hey Aap 12thie ho?)
+                </p></div>
+        </div>
+        <div class="event right" onclick="toggleDetails('event2')">
+            <h3>First In-person meet</h3>
+            <p>14/01/2024</p>
+            <div id="event2" class="details">Woh photo ghum hogya bhai😭</div>
+        </div>
+        <div class="event left" onclick="toggleDetails('event3')">
+            <h3>First Date(Kinda)</h3>
+            <p>09/03/2024</p>
+            <div id="event3" class="details">Sorry jldi jaane ke liye😭</div>
+        </div>
+        <div class="event right" onclick="toggleDetails('event4')">
+            <h3>Proposal</h3>
+            <p>14/03/2024</p>
+            <div id="event4" class="details">btw this happened exactly 11 months ago</div>
+        </div>
+        <div class="event left" onclick="toggleDetails('event5')">
+            <h3>Museum date</h3>
+            <p>17/04/2024</p>
+            <div id="event5" class="details">Yup I will call it date from now on!!!!</div>
+        </div>
+        <div class="event right" onclick="toggleDetails('event6')">
+            <h3>Tough Time</h3>
+            <p>27/07/2024</p>
+            <div id="event6" class="details">I came to Hyderabad, Sorry for the trouble I caused</div>
+        </div>
+        <div class="event left" onclick="toggleDetails('event7')">
+            <h3>First Giftssssss</h3>
+            <p>08/02/2025</p>
+            <div id="event7" class="details">Thank you so much for that beautiful giftttt</div>
+        </div>
+        <div class="event right" onclick="toggleDetails('event8')">
+            <h3>Our first Valentine</h3>
+            <p>14/02/2025</p>
+            <div id="event8" class="details">
+               Thanks for staying with me in this journey❤️
+        </div>
+    </div>
+
+    <a href="index.html" class="back">Back to Home</a>
+    <a href="page3.html" class="back">Next page❤️</a>
+    <script>
+        function toggleDetails(id) {
+            var details = document.getElementById(id);
+            if (details.style.display === "block") {
+                details.style.display = "none";
+            } else {
+                details.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>
